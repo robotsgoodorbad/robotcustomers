@@ -105,10 +105,10 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
 
           <footer className="border-t border-slate-200 bg-white">
-            <div className="site-container flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between md:py-12">
+            <div className="site-container flex flex-col items-center gap-6 py-10 md:py-12">
               <Link
                 href="/"
-                className="flex items-center gap-3 text-base font-semibold text-slate-700 transition-opacity duration-200 hover:opacity-85"
+                className="transition-opacity duration-200 hover:opacity-85"
                 aria-label="Robot Customers home"
               >
                 <Image
@@ -118,31 +118,39 @@ export default function RootLayout({
                   height={320}
                   className="h-20 w-auto object-contain md:h-28"
                 />
-                <span>Robot Customers</span>
               </Link>
-              <div className="flex flex-wrap items-center gap-5">
-                <Link href="/" className="footer-link">
+              <p className="text-sm text-slate-600">
+                Robot Customers LLC &copy; 2026
+              </p>
+              <nav className="flex flex-wrap items-center justify-center gap-0">
+                <Link href="/" className="footer-link px-4 py-1">
                   Home
                 </Link>
-                <Link href="/services" className="footer-link">
+                <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
+                <Link href="/services" className="footer-link px-4 py-1">
                   Services
                 </Link>
-                <Link href="/about" className="footer-link">
+                <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
+                <Link href="/about" className="footer-link px-4 py-1">
                   About
                 </Link>
-                <Link href="/methods" className="footer-link">
+                <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
+                <Link href="/methods" className="footer-link px-4 py-1">
                   Methods
                 </Link>
-                <Link href="/insights" className="footer-link">
+                <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
+                <Link href="/insights" className="footer-link px-4 py-1">
                   Insights
                 </Link>
-                <Link href="/contact" className="footer-link">
+                <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
+                <Link href="/contact" className="footer-link px-4 py-1">
                   Contact
                 </Link>
-                <Link href="/privacy" className="footer-link">
+                <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
+                <Link href="/privacy" className="footer-link px-4 py-1">
                   Privacy
                 </Link>
-              </div>
+              </nav>
             </div>
           </footer>
         </div>
