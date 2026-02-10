@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact | Robot Customers",
@@ -8,8 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const hasContactEmail = siteConfig.contactEmail.length > 0;
-
   return (
     <div className="site-container page-shell">
       <h1 className="page-title">
@@ -29,90 +28,22 @@ export default function ContactPage() {
             Use the form below and we will follow up directly.
           </p>
 
-          <form className="mt-6 space-y-5">
-            <div>
-              <label
-                htmlFor="name"
-                className="field-label"
-              >
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                className="field-input"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="field-label"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                className="field-input"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="company"
-                className="field-label"
-              >
-                Company
-              </label>
-              <input
-                id="company"
-                name="company"
-                type="text"
-                className="field-input"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="field-label"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                className="field-input"
-              />
-            </div>
-            <button type="button" className="btn-primary">
-              Submit Message (backend coming soon)
-            </button>
-          </form>
+          <ContactForm />
         </section>
 
         <aside className="section-card">
           <h2 className="text-xl font-semibold text-slate-900">
-            Mailto fallback
+            Prefer email?
           </h2>
-          {hasContactEmail ? (
-            <>
-              <p className="mt-3 text-slate-700">
-                If the form is unavailable, use your email app directly.
-              </p>
-              <a
-                href={`mailto:${siteConfig.contactEmail}`}
-                className="btn-secondary mt-5"
-              >
-                Email Us
-              </a>
-            </>
-          ) : (
-            <p className="mt-3 text-slate-700">
-              Direct email contact will be published here once finalized.
-            </p>
-          )}
+          <p className="mt-3 text-slate-700">
+            You can also reach us directly.
+          </p>
+          <a
+            href={`mailto:${siteConfig.contactEmail}`}
+            className="btn-secondary mt-5"
+          >
+            Email Us
+          </a>
         </aside>
       </div>
     </div>

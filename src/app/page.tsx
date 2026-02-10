@@ -34,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT: hero image card */}
-        <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+        <div className="photo-frame">
           <Image
             src="/images/home-hero.png"
             alt="People looking at humanoid robots on display in a robot store."
@@ -53,7 +53,7 @@ export default function Home() {
         </h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           <article className="section-card p-6">
-            <BarChart3 className="mb-3 h-7 w-7 text-slate-400" strokeWidth={1.5} />
+            <BarChart3 className="mb-3 h-7 w-7 text-cyan-600" strokeWidth={1.5} />
             <h3 className="text-lg font-semibold text-slate-900">
               Quantitative Data
             </h3>
@@ -64,7 +64,7 @@ export default function Home() {
             </p>
           </article>
           <article className="section-card p-6">
-            <MessageCircle className="mb-3 h-7 w-7 text-slate-400" strokeWidth={1.5} />
+            <MessageCircle className="mb-3 h-7 w-7 text-cyan-600" strokeWidth={1.5} />
             <h3 className="text-lg font-semibold text-slate-900">
               Qualitative Insights
             </h3>
@@ -75,14 +75,22 @@ export default function Home() {
             </p>
           </article>
           <article className="section-card p-6">
-            <Users className="mb-3 h-7 w-7 text-slate-400" strokeWidth={1.5} />
+            <Users className="mb-3 h-7 w-7 text-cyan-600" strokeWidth={1.5} />
             <h3 className="text-lg font-semibold text-slate-900">
               Community Building
             </h3>
             <p className="mt-3 body-copy">
-              We don&apos;t just collect data-we cultivate conversations. Through
-              RobotsGoodOrBad.com and social channels, we keep the dialogue
-              going so you can track evolving customer sentiment and trends.
+              We don&apos;t just collect data-we cultivate conversations. Through{" "}
+              <a
+                href="https://robotsgoodorbad.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-link"
+              >
+                RobotsGoodorBad.com
+              </a>{" "}
+              and social channels, we keep the dialogue going so you can track
+              evolving customer sentiment and trends.
             </p>
           </article>
         </div>
@@ -111,14 +119,16 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="relative min-h-[280px] overflow-hidden rounded-xl border border-slate-200 shadow-sm md:min-h-0">
-          <Image
-            src="/images/home-front-row.png"
-            alt="People seated along a city street watching humanoid robots walk by."
-            fill
-            sizes="(max-width: 767px) 100vw, 33vw"
-            className="object-cover"
-          />
+        <div className="photo-frame-fill">
+          <div className="min-h-[280px] md:min-h-[360px]">
+            <Image
+              src="/images/home-front-row.png"
+              alt="People seated along a city street watching humanoid robots walk by."
+              fill
+              sizes="(max-width: 767px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
     </div>

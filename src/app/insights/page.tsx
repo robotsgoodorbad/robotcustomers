@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Insights | Robot Customers",
   description:
-    "Curated link-outs to RobotsGoodOrBad.com for ongoing customer insight in robotics.",
+    "Curated link-outs to RobotsGoodorBad.com for ongoing customer insight in robotics.",
 };
 
 export default function InsightsPage() {
@@ -16,16 +16,15 @@ export default function InsightsPage() {
       </h1>
 
       <p className="page-lead">
-        This page curates public-facing content from RobotsGoodOrBad.com so
-        teams can follow customer conversations about robots over time.
+        A running set of articles that document real-world robot sentiment and our Robot Readiness audience segments.
       </p>
 
       <section className="section-card mt-12">
         <h2 className="section-title">
-          Curated reading list
+          Where to start
         </h2>
         <p className="mt-3 text-sm text-slate-600">
-          Insights live on RobotsGoodOrBad.com.
+          These articles live on RobotsGoodorBad.com and are updated as our research evolves
         </p>
         <ul className="mt-6 space-y-4">
           {siteConfig.insights.map((item) => (
@@ -67,25 +66,22 @@ export default function InsightsPage() {
           How to use these insights
         </h2>
         <p className="body-copy mt-4">
-          Use these readings to inform product positioning, customer messaging,
-          and interview planning. Pair article takeaways with your own survey
-          and interview findings before making product or go-to-market
-          decisions.
+          These articles help you come into research and planning with context. Use them to draft better survey questions, run stronger interviews, and align your team on the audience segments you&apos;re trying to reach.
         </p>
       </section>
 
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+        <Link href="/contact" className="btn-primary">
+          Contact Us
+        </Link>
         <a
           href="https://robotsgoodorbad.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary"
+          className="btn-secondary"
         >
-          View RobotsGoodOrBad.com
+          Visit RobotsGoodorBad.com
         </a>
-        <Link href="/contact" className="btn-secondary">
-          Contact Us
-        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Radio, ClipboardList, MessageSquare, FileBarChart } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Services | Robot Customers",
@@ -15,67 +16,64 @@ export default function ServicesPage() {
       </h1>
 
       <p className="page-lead">
-        At Robot Customers, LLC, we combine deep customer research with content
-        strategy to help robotics companies understand the humans using their
-        machines. Our services bridge promotion and insight, giving you
-        actionable data while building trust with your audience.
+        Robot Customers helps teams understand how people talk about robots in everyday language — and what that means for product decisions, messaging, and adoption. We combine web-scale listening across online conversations with structured research (polls, surveys, quizzes) and one-on-one interviews, then bring it together in reporting that&apos;s meant to be usable, not academic.
       </p>
 
       <section className="mt-12 space-y-6">
         <article className="section-card">
-          <h2 className="section-title">
-            Customer Research Articles
-          </h2>
-          <p className="mt-4 body-copy">
-            We create tailored articles for your business or for our
-            public-facing site, RobotsGoodOrBad.com, that do more than just
-            promote your products. Each piece is crafted to educate and engage
-            readers while seamlessly integrating polls, surveys, and quizzes.
-            These interactive elements capture valuable quantitative data about
-            your potential customers-their needs, fears, and motivations. This
-            turns
-            every article into a research tool.
-          </p>
+          <div className="flex items-start gap-4">
+            <Radio className="mt-1 h-7 w-7 shrink-0 text-cyan-600" strokeWidth={1.5} aria-hidden="true" />
+            <div className="flex-1">
+              <h2 className="section-title">
+                Online conversations
+              </h2>
+              <p className="mt-4 body-copy">
+                We listen at scale across forums, social media, and public discussions where people talk candidly about robots—what excites them, what worries them, and what language they actually use. This gives you the pulse of everyday sentiment and recurring themes before you spend a dollar on formal research.
+              </p>
+            </div>
+          </div>
         </article>
 
         <article className="section-card">
-          <h2 className="section-title">
-            One-on-One Customer Interviews
-          </h2>
-          <p className="mt-4 body-copy">
-            With over 25 years of experience in user research and customer
-            interviewing, we specialize in gathering qualitative insights that
-            go beyond numbers. Through in-depth conversations, we uncover the
-            &quot;why&quot; behind consumer behavior-what makes people adopt, trust, or
-            hesitate when it comes to robots in their homes and daily lives.
-          </p>
+          <div className="flex items-start gap-4">
+            <ClipboardList className="mt-1 h-7 w-7 shrink-0 text-cyan-600" strokeWidth={1.5} aria-hidden="true" />
+            <div className="flex-1">
+              <h2 className="section-title">
+                Polls, surveys, and quizzes
+              </h2>
+              <p className="mt-4 body-copy">
+                We design and deploy structured questions that capture quantitative data on specific topics—from feature preferences to adoption barriers. These tools turn casual engagement into measurable insights you can chart, compare, and act on.
+              </p>
+            </div>
+          </div>
         </article>
 
         <article className="section-card">
-          <h2 className="section-title">
-            Data Analysis &amp; Reporting
-          </h2>
-          <p className="mt-4 body-copy">
-            All interviews are transcribed, analyzed, and distilled into key
-            data points, quotes, and themes. We combine these qualitative
-            insights with the quantitative results from your polls and quizzes
-            to create comprehensive reports. Our deliverables include data
-            visualizations, user personas, and clear recommendations to guide
-            product design, marketing, and customer adoption.
-          </p>
+          <div className="flex items-start gap-4">
+            <MessageSquare className="mt-1 h-7 w-7 shrink-0 text-cyan-600" strokeWidth={1.5} aria-hidden="true" />
+            <div className="flex-1">
+              <h2 className="section-title">
+                One-on-one interviews
+              </h2>
+              <p className="mt-4 body-copy">
+                With over 25 years of experience in user research, we conduct in-depth conversations that uncover the &quot;why&quot; behind the numbers. You get direct quotes, unexpected motivations, and a richer understanding of the people who will (or won&apos;t) adopt your technology.
+              </p>
+            </div>
+          </div>
         </article>
 
         <article className="section-card">
-          <h2 className="section-title">
-            Interactive Content for Insights
-          </h2>
-          <p className="mt-4 body-copy">
-            Every service we offer is designed to work together: content drives
-            engagement, polls capture data, interviews deepen understanding, and
-            reports turn it all into actionable insight. Whether you need a
-            single campaign or an ongoing research program, we tailor the
-            approach to your goals.
-          </p>
+          <div className="flex items-start gap-4">
+            <FileBarChart className="mt-1 h-7 w-7 shrink-0 text-cyan-600" strokeWidth={1.5} aria-hidden="true" />
+            <div className="flex-1">
+              <h2 className="section-title">
+                Analysis and reporting
+              </h2>
+              <p className="mt-4 body-copy">
+                We synthesize everything—online signals, survey data, interview transcripts—into reports that are clear, visual, and built for decision-making. You get themes, quotes, charts, and recommendations you can put to work immediately.
+              </p>
+            </div>
+          </div>
         </article>
       </section>
 
