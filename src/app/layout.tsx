@@ -105,18 +105,18 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
 
           <footer className="border-t border-slate-200 bg-white">
-            <div className="site-container flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between">
+            <div className="site-container flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between md:py-12">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-sm text-slate-600 transition-opacity duration-200 hover:opacity-85"
+                className="flex items-center gap-3 text-base font-semibold text-slate-700 transition-opacity duration-200 hover:opacity-85"
                 aria-label="Robot Customers home"
               >
                 <Image
                   src="/brand/logo.png"
                   alt="Robot Customers logo"
-                  width={24}
-                  height={24}
-                  className="h-7 w-auto object-contain"
+                  width={200}
+                  height={320}
+                  className="h-20 w-auto object-contain md:h-28"
                 />
                 <span>Robot Customers</span>
               </Link>
