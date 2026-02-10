@@ -105,24 +105,29 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
 
           <footer className="border-t border-slate-200 bg-white">
-            <div className="site-container flex flex-col items-center gap-6 py-10 md:py-12">
-              <Link
-                href="/"
-                className="transition-opacity duration-200 hover:opacity-85"
-                aria-label="Robot Customers home"
-              >
-                <Image
-                  src="/brand/logo.png"
-                  alt="Robot Customers logo"
-                  width={200}
-                  height={320}
-                  className="h-20 w-auto object-contain md:h-28"
-                />
-              </Link>
-              <p className="text-sm text-slate-600">
-                Robot Customers LLC &copy; 2026
-              </p>
-              <nav className="flex flex-wrap items-center justify-center gap-0">
+            <div className="site-container flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between md:py-12">
+              {/* LEFT: Logo + Copyright */}
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="/"
+                  className="transition-opacity duration-200 hover:opacity-85"
+                  aria-label="Robot Customers home"
+                >
+                  <Image
+                    src="/brand/logo.png"
+                    alt="Robot Customers logo"
+                    width={200}
+                    height={320}
+                    className="h-20 w-auto object-contain md:h-28"
+                  />
+                </Link>
+                <p className="text-xs text-slate-500">
+                  Robot Customers LLC &copy; 2026
+                </p>
+              </div>
+
+              {/* RIGHT: Nav links with dividers */}
+              <nav className="flex flex-wrap items-center gap-0">
                 <Link href="/" className="footer-link px-4 py-1">
                   Home
                 </Link>
