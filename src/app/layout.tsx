@@ -128,7 +128,7 @@ export default function RootLayout({
               </div>
 
               {/* Nav links - order-2 mobile, order-2 desktop */}
-              <nav className="order-2 flex flex-wrap items-center gap-0">
+              <nav className="order-2 -ml-4 flex flex-wrap items-center justify-start gap-0 md:ml-0">
                 <Link href="/" className="footer-link px-4 py-1">
                   Home
                 </Link>
