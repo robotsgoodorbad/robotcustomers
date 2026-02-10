@@ -106,8 +106,8 @@ export default function RootLayout({
 
           <footer className="border-t border-slate-200 bg-white">
             <div className="site-container flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between md:py-12">
-              {/* LEFT: Logo + Copyright */}
-              <div className="flex flex-col gap-2">
+              {/* Logo - order-1 mobile, wrapped in flex-col on desktop */}
+              <div className="order-1 flex flex-col gap-2">
                 <Link
                   href="/"
                   className="transition-opacity duration-200 hover:opacity-85"
@@ -121,13 +121,14 @@ export default function RootLayout({
                     className="h-20 w-auto object-contain md:h-28"
                   />
                 </Link>
-                <p className="text-xs text-slate-500">
+                {/* Copyright - hidden on mobile, shown on desktop below logo */}
+                <p className="hidden text-xs text-slate-500 md:block">
                   Robot Customers LLC &copy; 2026
                 </p>
               </div>
 
-              {/* RIGHT: Nav links with dividers */}
-              <nav className="flex flex-wrap items-center gap-0">
+              {/* Nav links - order-2 mobile, order-2 desktop */}
+              <nav className="order-2 flex flex-wrap items-center gap-0">
                 <Link href="/" className="footer-link px-4 py-1">
                   Home
                 </Link>
@@ -156,6 +157,11 @@ export default function RootLayout({
                   Privacy
                 </Link>
               </nav>
+
+              {/* Copyright - order-3 mobile (bottom), hidden on desktop */}
+              <p className="order-3 text-xs text-slate-500 md:hidden">
+                Robot Customers LLC &copy; 2026
+              </p>
             </div>
           </footer>
         </div>
