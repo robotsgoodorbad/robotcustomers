@@ -1,65 +1,111 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteImage from "@/components/site-image";
+
+export const metadata: Metadata = {
+  title: "Home | Robot Customers",
+  description:
+    "We help robotics companies understand customer attitudes through research grounded in surveys, interviews, and ongoing community conversation.",
+};
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="site-container page-shell">
+      <section className="grid gap-10 md:grid-cols-[2fr_1fr]">
+        <div className="space-y-6">
+          <h1 className="page-title max-w-3xl">
+            We Know Robot Customers
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-2xl text-lg leading-8 text-slate-700">
+            Because we talk to people every day about robots-and as it turns
+            out, we&apos;re very good listeners.
           </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link href="/services" className="btn-primary">
+              Our Services
+            </Link>
+            <Link href="/about" className="btn-secondary">
+              About Us
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <aside className="section-card p-6">
+          <SiteImage
+            aspectClassName="aspect-[4/3]"
+            label="Image coming soon"
+          />
+        </aside>
+      </section>
+
+      <section className="mt-14 border-y border-slate-200 bg-white p-8 md:p-10">
+        <h2 className="section-title">
+          Here&apos;s What We Can Do For You
+        </h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <article className="section-card p-6">
+            <h3 className="text-lg font-semibold text-slate-900">
+              Quantitative Data
+            </h3>
+            <p className="mt-3 body-copy">
+              We gather structured data every day through polls, surveys, and
+              quizzes, asking targeted questions that give robotics companies
+              measurable answers about their market.
+            </p>
+          </article>
+          <article className="section-card p-6">
+            <h3 className="text-lg font-semibold text-slate-900">
+              Qualitative Insights
+            </h3>
+            <p className="mt-3 body-copy">
+              Through one-on-one interviews, we uncover the &quot;why&quot; behind
+              customer attitudes-so you can see how people think, feel, and plan
+              to act when it comes to robots.
+            </p>
+          </article>
+          <article className="section-card p-6">
+            <h3 className="text-lg font-semibold text-slate-900">
+              Community Building
+            </h3>
+            <p className="mt-3 body-copy">
+              We don&apos;t just collect data-we cultivate conversations. Through
+              RobotsGoodOrBad.com and social channels, we keep the dialogue
+              going so you can track evolving customer sentiment and trends.
+            </p>
+          </article>
         </div>
-      </main>
+        <div className="mt-8">
+          <Link href="/services" className="btn-primary">
+            Our Services
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-14 grid gap-8 md:grid-cols-[2fr_1fr]">
+        <div className="section-card md:p-10">
+          <h2 className="section-title">
+            The World Is Changing Fast And We&apos;ve Got Front Row Seats
+          </h2>
+          <p className="mt-4 body-copy">
+            By all accounts our society is going through a major paradigm shift.
+            In our lifetimes we have gone from science fiction to reality. How
+            are we all going to cope when we&apos;re surrounded by robots at home
+            and in the streets? Let&apos;s find out together-and don&apos;t worry,
+            we&apos;ll take notes.
+          </p>
+          <div className="mt-8">
+            <Link href="/about" className="btn-secondary">
+              About Us
+            </Link>
+          </div>
+        </div>
+        <aside className="section-card p-6">
+          <SiteImage
+            aspectClassName="aspect-[4/3]"
+            label="Image coming soon"
+          />
+        </aside>
+      </section>
     </div>
   );
 }
