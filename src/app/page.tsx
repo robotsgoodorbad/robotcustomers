@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-14 border-y border-slate-200 bg-white p-8 md:p-10">
+      <section className="mt-14 overflow-hidden rounded-xl border border-slate-200 bg-white p-8 md:p-10">
         <h2 className="section-title">
           Here&apos;s What We Can Do For You
         </h2>

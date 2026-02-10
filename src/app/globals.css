@@ -18,33 +18,40 @@
 }
 
 body {
-  background: #f1f5f9; /* Fallback */
+  background: #f8fafc;
   color: var(--foreground);
   font-family: Verdana, Geneva, sans-serif;
-  /* Global Side Pattern: Subtle Blueprint Grid */
+  
+  /* Global Side Pattern: Subtle Tech Grid */
   background-image: 
-    linear-gradient(rgba(51, 65, 85, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(51, 65, 85, 0.07) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(90deg, rgba(51, 65, 85, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(51, 65, 85, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 @layer components {
-  /* Hero Specific Robotic Pattern */
+  /* Hero Specific Robotic Pattern - Layered */
   .hero-robotic-bg {
     background-color: transparent;
     background-image: 
-      /* Large Grid */
-      linear-gradient(rgba(15, 23, 42, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15, 23, 42, 0.1) 1px, transparent 1px),
-      /* Small Sub-grid */
-      linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+      /* Radial Glow */
+      radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
+      /* Primary Tech Grid */
+      linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+      /* Subtle Dots Array */
+      radial-gradient(rgba(15, 23, 42, 0.15) 1px, transparent 1px);
     background-size: 
-      80px 80px,
-      80px 80px,
-      20px 20px,
+      100% 100%,
+      40px 40px,
+      40px 40px,
       20px 20px;
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    background-position: 
+      0 0,
+      0 0,
+      0 0,
+      10px 10px;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
   .site-container {
     @apply mx-auto w-full max-w-6xl px-6;
