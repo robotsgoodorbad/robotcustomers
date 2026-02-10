@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import SiteImage from "@/components/site-image";
+import { BarChart3, MessageCircle, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Home | Robot Customers",
@@ -11,12 +12,14 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="site-container page-shell">
-      <section className="grid gap-10 md:grid-cols-[2fr_1fr]">
+      {/* HERO: 2-col on desktop, stacked on mobile */}
+      <section className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+        {/* LEFT: text + CTAs */}
         <div className="space-y-6">
-          <h1 className="page-title max-w-3xl">
+          <h1 className="page-title">
             We Know Robot Customers
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-slate-700">
+          <p className="max-w-xl text-lg leading-8 text-slate-700">
             Because we talk to people every day about robots-and as it turns
             out, we&apos;re very good listeners.
           </p>
@@ -30,12 +33,18 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="section-card p-6">
-          <SiteImage
-            aspectClassName="aspect-[4/3]"
-            label="Image coming soon"
+        {/* RIGHT: hero image card */}
+        <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+          <Image
+            src="/images/home-hero.png"
+            alt="People looking at humanoid robots on display in a robot store."
+            width={1024}
+            height={682}
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            className="h-auto w-full object-cover"
+            priority
           />
-        </aside>
+        </div>
       </section>
 
       <section className="mt-14 border-y border-slate-200 bg-white p-8 md:p-10">
@@ -44,6 +53,7 @@ export default function Home() {
         </h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           <article className="section-card p-6">
+            <BarChart3 className="mb-3 h-7 w-7 text-slate-400" strokeWidth={1.5} />
             <h3 className="text-lg font-semibold text-slate-900">
               Quantitative Data
             </h3>
@@ -54,6 +64,7 @@ export default function Home() {
             </p>
           </article>
           <article className="section-card p-6">
+            <MessageCircle className="mb-3 h-7 w-7 text-slate-400" strokeWidth={1.5} />
             <h3 className="text-lg font-semibold text-slate-900">
               Qualitative Insights
             </h3>
@@ -64,6 +75,7 @@ export default function Home() {
             </p>
           </article>
           <article className="section-card p-6">
+            <Users className="mb-3 h-7 w-7 text-slate-400" strokeWidth={1.5} />
             <h3 className="text-lg font-semibold text-slate-900">
               Community Building
             </h3>
@@ -81,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-14 grid gap-8 md:grid-cols-[2fr_1fr]">
+      <section className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr]">
         <div className="section-card md:p-10">
           <h2 className="section-title">
             The World Is Changing Fast And We&apos;ve Got Front Row Seats
@@ -99,12 +111,15 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <aside className="section-card p-6">
-          <SiteImage
-            aspectClassName="aspect-[4/3]"
-            label="Image coming soon"
+        <div className="relative min-h-[280px] overflow-hidden rounded-xl border border-slate-200 shadow-sm md:min-h-0">
+          <Image
+            src="/images/home-front-row.png"
+            alt="People seated along a city street watching humanoid robots walk by."
+            fill
+            sizes="(max-width: 767px) 100vw, 33vw"
+            className="object-cover"
           />
-        </aside>
+        </div>
       </section>
     </div>
   );

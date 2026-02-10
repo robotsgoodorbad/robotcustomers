@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -31,20 +32,28 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
           <header className="border-b border-slate-200 bg-white">
-            <div className="site-container py-4">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold tracking-wide text-slate-800">
-                  ROBOT CUSTOMERS
-                </p>
-                <nav className="hidden items-center gap-8 md:flex">
-                  <Link href="/" className="nav-link">
-                    Home
-                  </Link>
+            <div className="mx-auto max-w-7xl px-6 py-4 md:py-0 md:h-32">
+              <div className="flex h-full items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
+                {/* LEFT: logo only */}
+                <Link
+                  href="/"
+                  className="inline-flex shrink-0 items-center transition-opacity duration-200 hover:opacity-80"
+                  aria-label="Robot Customers home"
+                >
+                  <Image
+                    src="/brand/logo.png"
+                    alt="Robot Customers logo"
+                    width={200}
+                    height={320}
+                    className="h-20 w-auto object-contain md:h-28"
+                    priority
+                  />
+                </Link>
+
+                {/* CENTER: nav links (desktop only) */}
+                <nav className="hidden items-center justify-center gap-8 md:flex">
                   <Link href="/services" className="nav-link">
                     Services
-                  </Link>
-                  <Link href="/about" className="nav-link">
-                    About
                   </Link>
                   <Link href="/methods" className="nav-link">
                     Methods
@@ -52,28 +61,44 @@ export default function RootLayout({
                   <Link href="/insights" className="nav-link">
                     Insights
                   </Link>
+                  <Link href="/about" className="nav-link">
+                    About
+                  </Link>
                 </nav>
-                <Link href="/contact" className="btn-primary px-4 py-2">
+
+                {/* RIGHT: CTA button (desktop only) */}
+                <Link
+                  href="/contact"
+                  className="btn-primary hidden px-4 py-2 text-sm md:inline-flex"
+                >
                   Contact Us
                 </Link>
+
+                {/* RIGHT: Menu toggle (mobile only) */}
+                <details className="relative md:hidden">
+                  <summary className="flex cursor-pointer items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-700 transition-colors duration-200 hover:bg-slate-100">
+                    <span className="mr-1.5 text-base leading-none">≡</span>
+                    Menu
+                  </summary>
+                  <nav className="absolute right-0 top-full z-50 mt-2 grid w-48 gap-1 rounded-lg border border-slate-200 bg-white p-3 shadow-lg">
+                    <Link href="/services" className="nav-link rounded-md px-3 py-2 hover:bg-slate-50">
+                      Services
+                    </Link>
+                    <Link href="/methods" className="nav-link rounded-md px-3 py-2 hover:bg-slate-50">
+                      Methods
+                    </Link>
+                    <Link href="/insights" className="nav-link rounded-md px-3 py-2 hover:bg-slate-50">
+                      Insights
+                    </Link>
+                    <Link href="/about" className="nav-link rounded-md px-3 py-2 hover:bg-slate-50">
+                      About
+                    </Link>
+                    <Link href="/contact" className="btn-primary mt-1 justify-center px-3 py-2 text-sm">
+                      Contact Us
+                    </Link>
+                  </nav>
+                </details>
               </div>
-              <nav className="mt-3 flex flex-wrap gap-5 md:hidden">
-                <Link href="/" className="nav-link">
-                  Home
-                </Link>
-                <Link href="/services" className="nav-link">
-                  Services
-                </Link>
-                <Link href="/about" className="nav-link">
-                  About
-                </Link>
-                <Link href="/methods" className="nav-link">
-                  Methods
-                </Link>
-                <Link href="/insights" className="nav-link">
-                  Insights
-                </Link>
-              </nav>
             </div>
           </header>
 
@@ -81,7 +106,20 @@ export default function RootLayout({
 
           <footer className="border-t border-slate-200 bg-white">
             <div className="site-container flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between">
-              <p className="text-sm text-slate-600">Robot Customers</p>
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-sm text-slate-600 transition-opacity duration-200 hover:opacity-85"
+                aria-label="Robot Customers home"
+              >
+                <Image
+                  src="/brand/logo.png"
+                  alt="Robot Customers logo"
+                  width={24}
+                  height={24}
+                  className="h-7 w-auto object-contain"
+                />
+                <span>Robot Customers</span>
+              </Link>
               <div className="flex flex-wrap items-center gap-5">
                 <Link href="/" className="footer-link">
                   Home
