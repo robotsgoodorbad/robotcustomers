@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <div className="flex min-h-screen flex-col text-slate-900">
-          <header className="border-b border-slate-200 bg-white">
+        <div className="page-top-band relative flex min-h-screen flex-col text-slate-900">
+          <header className="relative z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
             <div className="mx-auto max-w-7xl px-6 py-4 md:py-0 md:h-32">
               <div className="flex h-full items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
                 {/* LEFT: logo only */}
@@ -56,9 +56,9 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="flex-1">{children}</main>
+          <main className="relative z-10 flex-1">{children}</main>
 
-          <footer className="border-t border-slate-200 bg-white">
+          <footer className="relative z-20 border-t border-slate-200 bg-white">
             <div className="site-container flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between md:py-12">
               {/* Logo - order-1 mobile, wrapped in flex-col on desktop */}
               <div className="order-1 flex flex-col gap-2">

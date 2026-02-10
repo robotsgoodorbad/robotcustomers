@@ -14,9 +14,6 @@ export default function Home() {
     <div className="site-container page-shell relative">
       {/* HERO: 2-col on desktop, stacked on mobile */}
       <section className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-        {/* Robotic Hero Background Layer */}
-        <div className="hero-robotic-bg pointer-events-none absolute -inset-x-40 -top-20 -bottom-20 -z-10 opacity-100 mix-blend-multiply"></div>
-        
         {/* LEFT: text + CTAs */}
         <div className="space-y-6">
           <h1 className="page-title">

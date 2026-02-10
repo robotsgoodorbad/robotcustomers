@@ -21,38 +21,93 @@ body {
   background: #f8fafc;
   color: var(--foreground);
   font-family: Verdana, Geneva, sans-serif;
-  
-  /* Global Side Pattern: Subtle Tech Grid */
-  background-image: 
-    linear-gradient(90deg, rgba(51, 65, 85, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(51, 65, 85, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
 }
 
 @layer components {
-  /* Hero Specific Robotic Pattern - Layered */
-  .hero-robotic-bg {
-    background-color: transparent;
-    background-image: 
-      /* Radial Glow */
-      radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
-      /* Primary Tech Grid */
-      linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px),
-      /* Subtle Dots Array */
-      radial-gradient(rgba(15, 23, 42, 0.15) 1px, transparent 1px);
-    background-size: 
-      100% 100%,
-      40px 40px,
-      40px 40px,
-      20px 20px;
-    background-position: 
-      0 0,
-      0 0,
-      0 0,
-      10px 10px;
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  /*
+   * TARGET SELECTOR: .page-top-band
+   * Location: body > div.page-top-band (wraps header + main + footer in layout.tsx)
+   * Pattern sits on ::before pseudo-element with z-index:0, content sits above at z-index:10+
+   */
+
+  .page-top-band {
+    position: relative;
+    overflow: hidden;
+    /* Base gradient for soft glow behind hero */
+    background: radial-gradient(
+      ellipse 90% 50% at 50% 10%,
+      rgba(56, 189, 248, 0.04) 0%,
+      transparent 55%
+    );
   }
+
+  /* === ROBOT OUTLINE PATTERN: Varied robot characters (inspired by user example) === */
+  .page-top-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    /* Start at 0.10 for verification; reduce to 0.04-0.05 when finalized */
+    opacity: 0.10;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='280' height='280' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23334155' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Bot 1: Classic box robot with antenna --%3E%3Cg transform='translate(40,35)'%3E%3Crect x='4' y='12' width='24' height='26' rx='2'/%3E%3Ccircle cx='12' cy='22' r='2.5'/%3E%3Ccircle cx='20' cy='22' r='2.5'/%3E%3Cpath d='M10,30 L10,32 M22,30 L22,32'/%3E%3Cpath d='M14,6 L14,12 M18,6 L18,12'/%3E%3Ccircle cx='14' cy='5' r='2'/%3E%3Ccircle cx='18' cy='5' r='2'/%3E%3Cpath d='M0,20 L4,20 M28,20 L32,20'/%3E%3Cpath d='M8,30 L12,36 M20,30 L24,36'/%3E%3C/g%3E%3C!-- Bot 2: Rounded friendly bot --%3E%3Cg transform='translate(200,50)'%3E%3Crect x='0' y='10' width='28' height='22' rx='6'/%3E%3Ccircle cx='9' cy='18' r='2'/%3E%3Ccircle cx='19' cy='18' r='2'/%3E%3Cpath d='M10,25 L18,25'/%3E%3Cpath d='M12,4 L12,10 M16,4 L16,10'/%3E%3Cpath d='M-2,18 L0,18 M28,18 L30,18'/%3E%3Crect x='10' y='28' width='3' height='5'/%3E%3Crect x='15' y='28' width='3' height='5'/%3E%3C/g%3E%3C!-- Bot 3: Tall thin robot --%3E%3Cg transform='translate(130,180)'%3E%3Crect x='4' y='8' width='16' height='32' rx='3'/%3E%3Ccircle cx='9' cy='16' r='2'/%3E%3Ccircle cx='15' cy='16' r='2'/%3E%3Crect x='7' y='24' width='10' height='4' rx='1'/%3E%3Cpath d='M10,3 L10,8 M14,3 L14,8'/%3E%3Cpath d='M0,22 L4,22 M20,22 L24,22'/%3E%3Crect x='8' y='36' width='3' height='6'/%3E%3Crect x='13' y='36' width='3' height='6'/%3E%3C/g%3E%3C!-- Bot 4: Compact bot with wrench arms --%3E%3Cg transform='translate(50,190)'%3E%3Crect x='2' y='10' width='22' height='18' rx='3'/%3E%3Ccircle cx='9' cy='17' r='2'/%3E%3Ccircle cx='17' cy='17' r='2'/%3E%3Cpath d='M11,5 L11,10 M15,5 L15,10'/%3E%3Cpath d='M0,16 L2,16 L1,20 M24,16 L26,16 L25,20'/%3E%3Crect x='9' y='26' width='3' height='4'/%3E%3Crect x='14' y='26' width='3' height='4'/%3E%3C/g%3E%3C!-- Bot 5: Wide robot with details --%3E%3Cg transform='translate(185,170)'%3E%3Crect x='0' y='8' width='32' height='20' rx='2'/%3E%3Ccircle cx='10' cy='15' r='2.5'/%3E%3Ccircle cx='22' cy='15' r='2.5'/%3E%3Crect x='13' y='18' width='6' height='3' rx='1'/%3E%3Cpath d='M14,3 L14,8 M18,3 L18,8'/%3E%3Cpath d='M-3,14 L0,14 M32,14 L35,14'/%3E%3Crect x='11' y='26' width='4' height='6'/%3E%3Crect x='17' y='26' width='4' height='6'/%3E%3C/g%3E%3C!-- Bot 6: Small hovering bot --%3E%3Cg transform='translate(240,200)'%3E%3Crect x='0' y='6' width='18' height='16' rx='3'/%3E%3Ccircle cx='6' cy='12' r='2'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3Cpath d='M7,3 L7,6 M11,3 L11,6'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 280px 280px;
+    background-position: 0 0;
+    /* Fade pattern toward bottom */
+    mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
+    /* Slow floating animation */
+    animation: robot-float 50s ease-in-out infinite;
+  }
+
+  /* Floating animation: robots slowly drift diagonally */
+  @keyframes robot-float {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    25% {
+      background-position: 60px 40px;
+    }
+    50% {
+      background-position: 30px 80px;
+    }
+    75% {
+      background-position: -30px 50px;
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .page-top-band::before {
+      animation: none;
+    }
+  }
+
+  /* === OPTION B: Hardware/Parts (SVG stencil pattern) === */
+  /* Uncomment to switch to Option B:
+  .page-top-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230f172a' fill-opacity='0.25'%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='70' cy='10' r='2'/%3E%3Ccircle cx='10' cy='70' r='2'/%3E%3Ccircle cx='70' cy='70' r='2'/%3E%3Cpath d='M40,20 L40,35 M35,27 L45,27' stroke='%230f172a' stroke-width='1' fill='none'/%3E%3Crect x='35' y='50' width='10' height='8' rx='1'/%3E%3Ccircle cx='40' cy='62' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
+  }
+  */
+
+  /* Mobile: reduce pattern density + opacity */
+  @media (max-width: 768px) {
+    .page-top-band::before {
+      opacity: 0.08;
+      background-size: 160px 160px;
+    }
+  }
+
   .site-container {
     @apply mx-auto w-full max-w-6xl px-6;
   }
