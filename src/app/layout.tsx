@@ -55,9 +55,6 @@ export default function RootLayout({
                   <Link href="/services" className="nav-link">
                     Services
                   </Link>
-                  <Link href="/methods" className="nav-link">
-                    Methods
-                  </Link>
                   <Link href="/insights" className="nav-link">
                     Insights
                   </Link>
@@ -83,9 +80,6 @@ export default function RootLayout({
                   <nav className="absolute right-0 top-full z-50 mt-2 grid w-48 gap-1 rounded-lg border border-slate-200 bg-white p-3 shadow-lg">
                     <Link href="/services" className="nav-link rounded-md px-3 py-2 hover:bg-slate-50">
                       Services
-                    </Link>
-                    <Link href="/methods" className="nav-link rounded-md px-3 py-2 hover:bg-slate-50">
-                      Methods
                     </Link>
                     <Link href="/insights" className="nav-link rounded-md px-3 py-2 hover:bg-slate-50">
                       Insights
@@ -139,10 +133,6 @@ export default function RootLayout({
                 <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
                 <Link href="/about" className="footer-link px-4 py-1">
                   About
-                </Link>
-                <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
-                <Link href="/methods" className="footer-link px-4 py-1">
-                  Methods
                 </Link>
                 <span className="h-4 w-px bg-slate-300" aria-hidden="true"></span>
                 <Link href="/insights" className="footer-link px-4 py-1">
