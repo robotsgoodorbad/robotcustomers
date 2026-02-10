@@ -8,8 +8,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +20,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 @layer components {
@@ -38,7 +37,7 @@ body {
   }
 
   .page-lead {
-    @apply mt-6 max-w-4xl text-lg leading-8 text-slate-700;
+    @apply mt-6 max-w-4xl text-lg leading-normal text-slate-700;
   }
 
   .section-card {
@@ -50,7 +49,7 @@ body {
   }
 
   .body-copy {
-    @apply leading-8 text-slate-700;
+    @apply leading-normal text-slate-700;
   }
 
   .nav-link {

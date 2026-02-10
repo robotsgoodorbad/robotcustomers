@@ -19,7 +19,7 @@ export default function Home() {
           <h1 className="page-title">
             We Know Robot Customers
           </h1>
-          <p className="max-w-xl text-lg leading-8 text-slate-700">
+          <p className="max-w-xl text-lg leading-normal text-slate-700">
             Because we talk to people every day about robots-and as it turns
             out, we&apos;re very good listeners.
           </p>

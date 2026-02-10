@@ -15,7 +15,7 @@ export default function ContactPage() {
       <h1 className="page-title">
         Contact
       </h1>
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
+      <p className="mt-6 max-w-3xl text-lg leading-normal text-slate-700">
         Tell us what you are building and what customer questions you need to
         answer. We will follow up with next steps.
       </p>

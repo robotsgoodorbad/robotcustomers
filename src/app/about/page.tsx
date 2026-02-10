@@ -14,7 +14,7 @@ export default function AboutPage() {
         About
       </h1>
 
-      <div className="mt-8 max-w-4xl space-y-6 text-lg leading-8 text-slate-700">
+      <div className="mt-8 max-w-4xl space-y-6 text-lg leading-normal text-slate-700">
         <p>
           At Robot Customers LLC, we work with companies building, selling, and
           marketing consumer robots to help them truly understand their

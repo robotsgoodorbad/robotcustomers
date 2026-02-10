@@ -31,7 +31,7 @@ export default function InsightsPage() {
           {siteConfig.insights.map((item) => (
             <li key={item.title} className="rounded-lg border border-slate-200 p-5">
               <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">{item.summary}</p>
+              <p className="mt-2 text-sm leading-normal text-slate-700">{item.summary}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {item.tags.map((tag) => (
                   <span
