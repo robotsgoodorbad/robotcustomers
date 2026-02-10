@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
+        <div className="flex min-h-screen flex-col text-slate-900">
           <header className="border-b border-slate-200 bg-white">
             <div className="mx-auto max-w-7xl px-6 py-4 md:py-0 md:h-32">
               <div className="flex h-full items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">

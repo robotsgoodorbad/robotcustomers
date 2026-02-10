@@ -18,16 +18,34 @@
 }
 
 body {
-  background: #f1f5f9;
+  background: #f1f5f9; /* Fallback */
   color: var(--foreground);
   font-family: Verdana, Geneva, sans-serif;
+  /* Global Side Pattern: Subtle Blueprint Grid */
   background-image: 
-    linear-gradient(rgba(148, 163, 184, 0.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.2) 1px, transparent 1px);
-  background-size: 30px 30px;
+    linear-gradient(rgba(51, 65, 85, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51, 65, 85, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 @layer components {
+  /* Hero Specific Robotic Pattern */
+  .hero-robotic-bg {
+    background-color: transparent;
+    background-image: 
+      /* Large Grid */
+      linear-gradient(rgba(15, 23, 42, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.1) 1px, transparent 1px),
+      /* Small Sub-grid */
+      linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 
+      80px 80px,
+      80px 80px,
+      20px 20px,
+      20px 20px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
   .site-container {
     @apply mx-auto w-full max-w-6xl px-6;
   }
