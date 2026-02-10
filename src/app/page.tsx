@@ -13,7 +13,9 @@ export default function Home() {
   return (
     <div className="site-container page-shell">
       {/* HERO: 2-col on desktop, stacked on mobile */}
-      <section className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+      <section className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+        {/* Subtle gradient overlay behind hero */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-transparent to-slate-100/30 opacity-60"></div>
         {/* LEFT: text + CTAs */}
         <div className="space-y-6">
           <h1 className="page-title">
@@ -47,7 +49,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-14 border-y border-slate-200 bg-white p-8 md:p-10">
+      <section className="relative mt-14 overflow-hidden border-y border-slate-200 bg-white p-8 md:p-10">
+        {/* Tech corner accent */}
+        <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 opacity-[0.03]">
+          <svg viewBox="0 0 100 100" className="h-full w-full">
+            <circle cx="100" cy="0" r="80" fill="currentColor" />
+            <circle cx="100" cy="0" r="60" fill="none" stroke="currentColor" strokeWidth="1" />
+            <circle cx="100" cy="0" r="40" fill="none" stroke="currentColor" strokeWidth="1" />
+          </svg>
+        </div>
         <h2 className="section-title">
           Here&apos;s What We Can Do For You
         </h2>
