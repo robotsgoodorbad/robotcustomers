@@ -6,7 +6,7 @@ export type InsightItem = {
 };
 
 export const siteConfig = {
-  contactEmail: "mar@robotsgoodorbad.com",
+  contactEmail: "info@robotsgoodorbad.com",
   contactApiUrl:
     "https://robotcustomers-contact-694763544131.us-central1.run.app/contact",
   insights: [
