@@ -39,10 +39,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/services" className="btn-primary">
-              Our Services
+              What We Do
             </Link>
-            <Link href="/about" className="btn-secondary">
-              About Us
+            <Link href="/insights" className="btn-secondary">
+              Insights
             </Link>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
         <div className="mt-8">
           <Link href="/services" className="btn-primary">
-            Our Services
+            See All Services
           </Link>
         </div>
       </section>
@@ -126,10 +126,18 @@ export default function Home() {
             trust barriers, and purchase intent, so you can make smarter
             decisions before you scale.
           </p>
-          <div className="mt-8">
-            <Link href="/about" className="btn-secondary">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/about" className="btn-primary">
               About Us
             </Link>
+            <a
+              href="https://robotsgoodorbad.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Visit RobotsGoodorBad.com
+            </a>
           </div>
         </div>
         <div className="photo-frame-fill">
