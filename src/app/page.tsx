@@ -70,8 +70,8 @@ export default function Home() {
             </h3>
             <p className="mt-3 body-copy">
               Through one-on-one interviews, we uncover the &quot;why&quot; behind
-              customer attitudes-so you can see how people think, feel, and plan
-              to act when it comes to robots.
+              customer attitudes, so you can see how people think, feel, and
+              plan to act when it comes to robots.
             </p>
           </article>
           <article className="section-card p-6">
@@ -80,7 +80,7 @@ export default function Home() {
               Community Building
             </h3>
             <p className="mt-3 body-copy">
-              We don&apos;t just collect data-we cultivate conversations. Through{" "}
+              We don&apos;t just collect data. We cultivate conversations. Through{" "}
               <a
                 href="https://robotsgoodorbad.com"
                 target="_blank"

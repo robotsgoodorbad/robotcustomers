@@ -16,19 +16,19 @@ export default function AboutPage() {
 
       <div className="mt-8 max-w-4xl space-y-6 text-lg leading-normal text-slate-700">
         <p>
-          We started Robot Customers because we want to be part of what comes next. Robots — not just humanoids — are going to be everywhere. Not someday in an abstract way, but in ordinary, everyday ways: passing us on sidewalks, working in stores and warehouses, showing up at our jobs, and eventually sharing space in our homes.
+          We started Robot Customers because we want to be part of what comes next. Robots, not just humanoids, are going to be everywhere. Not someday in an abstract way, but in ordinary, everyday ways: passing us on sidewalks, working in stores and warehouses, showing up at our jobs, and eventually sharing space in our homes.
         </p>
         <p>
-          What&apos;s striking is how many people haven&apos;t fully clocked how much this will change daily life. The shift won&apos;t feel like a single &quot;future moment.&quot; It&apos;ll happen in small steps until one day it&apos;s normal to see machines moving through the world alongside us. Some people will be excited. Others will be uneasy, skeptical, or genuinely afraid. Most will probably feel a mix of all of it — sometimes in the same week.
+          What&apos;s striking is how many people have not fully realized how much this will change daily life. The shift will not feel like a single future moment. It will happen in small steps until one day it is normal to see machines moving through the world alongside us. Some people will be excited. Others will be uneasy, skeptical, or genuinely afraid. Most will probably feel a mix of all of it, sometimes in the same week.
         </p>
         <p>
-          To us, this is one of the biggest stories of our lives, and we don&apos;t plan to watch it from the sidelines. But we&apos;re not interested in cheerleading, either. If robots are going to become part of everyday environments, then the human side matters just as much as the technical side: trust, privacy, safety, dignity, and whether people feel in control.
+          To us, this is one of the biggest stories of our lives, and we do not plan to watch it from the sidelines. We are not interested in cheerleading, either. If robots are going to become part of everyday environments, then the human side matters just as much as the technical side: trust, privacy, safety, dignity, and whether people feel in control.
         </p>
         <p>
-          Robot Customers is our way of staying close to the real-world truth of that transition. We listen to what people actually say about robots — in public conversations and in direct research — and we take those reactions seriously. The hope is simple: if we pay attention to how people feel, we can help teams build and introduce robots in ways that earn trust, respect boundaries, and make life better for more than just early adopters.
+          Robot Customers is our way of staying close to the real-world truth of that transition. We listen to what people actually say about robots in public conversations and in direct research, and we take those reactions seriously. The hope is simple. If we pay attention to how people feel, we can help teams build and introduce robots in ways that earn trust, respect boundaries, and make life better for more than just early adopters.
         </p>
         <p>
-          A future where robots &quot;work for all of us&quot; isn&apos;t automatic. It has to be designed for — with honest feedback, clear guardrails, and a willingness to adjust when something doesn&apos;t sit right. That&apos;s the kind of future we want to help shape: one where people can feel safe, and maybe even grateful, as the technology improves.
+          A future where robots work for all of us is not automatic. It has to be designed for, with honest feedback, clear guardrails, and a willingness to adjust when something does not sit right. That is the kind of future we want to help shape: one where people can feel safe, and maybe even grateful, as the technology improves.
         </p>
       </div>
 
