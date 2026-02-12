@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 import { ContactForm } from "@/components/contact-form";
+import { OG_DEFAULTS } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Contact | Robot Customers",
+  title: "Contact",
   description:
-    "Contact Robot Customers to discuss customer research for robotics products and programs.",
+    "Reach out to Robot Customers. Tell us what you're building and what you'd like to learn about your audience.",
+  alternates: { canonical: "/contact" },
+  openGraph: { ...OG_DEFAULTS, title: "Contact | Robot Customers", url: "/contact" },
 };
 
 export default function ContactPage() {

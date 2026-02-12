@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { OG_DEFAULTS } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "About | Robot Customers",
+  title: "About",
   description:
-    "Robot Customers helps companies understand how people think, feel, and plan to engage with consumer robots.",
+    "We study how people think and feel about robots as they move from demos to daily life — and what it takes to earn trust in the real world.",
+  alternates: { canonical: "/about" },
+  openGraph: { ...OG_DEFAULTS, title: "About | Robot Customers", url: "/about" },
 };
 
 export default function AboutPage() {

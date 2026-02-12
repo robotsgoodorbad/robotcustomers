@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Radio, ClipboardList, MessageSquare, FileBarChart } from "lucide-react";
+import { OG_DEFAULTS } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Services | Robot Customers",
+  title: "Services",
   description:
-    "Customer research services for robotics companies, combining quantitative data, qualitative interviews, and actionable reporting.",
+    "Research services for consumer robotics: online conversation signals, polls and surveys, and qualitative interviews synthesized into clear, actionable insights.",
+  alternates: { canonical: "/services" },
+  openGraph: { ...OG_DEFAULTS, title: "Services | Robot Customers", url: "/services" },
 };
 
 export default function ServicesPage() {

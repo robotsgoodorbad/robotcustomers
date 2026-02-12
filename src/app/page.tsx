@@ -2,26 +2,40 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { BarChart3, MessageCircle, Users } from "lucide-react";
+import { OG_DEFAULTS } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Home | Robot Customers",
+  title: "Robot Customers | Customer insight for consumer robotics",
   description:
-    "We help robotics companies understand customer attitudes through research grounded in surveys, interviews, and ongoing community conversation.",
+    "We combine online conversation analysis, surveys, and 1-on-1 interviews to help robotics teams understand how people feel about robots — and why.",
+  alternates: { canonical: "/" },
+  openGraph: { ...OG_DEFAULTS, title: "Robot Customers | Customer insight for consumer robotics", url: "/" },
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Robot Customers",
+  url: "https://robotcustomers.com",
 };
 
 export default function Home() {
   return (
     <div className="site-container page-shell relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+      />
       {/* HERO: 2-col on desktop, stacked on mobile */}
       <section className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
         {/* LEFT: text + CTAs */}
         <div className="space-y-6">
           <h1 className="page-title">
-            We Know Robot Customers
+            Customer insight for consumer robotics
           </h1>
           <p className="max-w-xl text-lg leading-normal text-slate-700">
-            Because we talk to people every day about robots-and as it turns
-            out, we&apos;re very good listeners.
+            We combine conversation analysis, surveys, and interviews to help
+            robotics teams understand how people feel about robots, and why.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/services" className="btn-primary">
@@ -49,7 +63,7 @@ export default function Home() {
 
       <section className="mt-14 overflow-hidden rounded-xl border border-slate-200 bg-white p-8 md:p-10">
         <h2 className="section-title">
-          Here&apos;s What We Can Do For You
+          How We Help Robotics Teams
         </h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           <article className="section-card p-6">
@@ -104,14 +118,13 @@ export default function Home() {
       <section className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr]">
         <div className="section-card md:p-10">
           <h2 className="section-title">
-            The World Is Changing Fast And We&apos;ve Got Front Row Seats
+            The world is changing fast. We track how people are responding.
           </h2>
           <p className="mt-4 body-copy">
-            By all accounts our society is going through a major paradigm shift.
-            In our lifetimes we have gone from science fiction to reality. How
-            are we all going to cope when we&apos;re surrounded by robots at home
-            and in the streets? Let&apos;s find out together-and don&apos;t worry,
-            we&apos;ll take notes.
+            As robots enter public spaces, workplaces, and homes, customer
+            sentiment is becoming a product constraint. We map expectations,
+            trust barriers, and purchase intent, so you can make smarter
+            decisions before you scale.
           </p>
           <div className="mt-8">
             <Link href="/about" className="btn-secondary">

@@ -3,18 +3,46 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeaderNav } from "@/components/header-nav";
 import { MobileNav } from "@/components/mobile-nav";
+import { OG_DEFAULTS } from "@/lib/metadata";
 import "./globals.css";
 
+const SITE_URL = "https://robotcustomers.com";
+
 export const metadata: Metadata = {
-  title: "Robot Customers | Customer Research for Robotics",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Robot Customers | Customer insight for consumer robotics",
+    template: "%s | Robot Customers",
+  },
   description:
-    "Robot Customers helps robotics teams make better product and go-to-market decisions with quantitative and qualitative customer research.",
+    "We combine online conversation analysis, surveys, and 1-on-1 interviews to help robotics teams understand how people feel about robots — and why.",
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    ...OG_DEFAULTS,
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: "/og-robotcustomers.png",
+        width: 1200,
+        height: 630,
+        alt: "Robot Customers — Customer insight for consumer robotics",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -23,9 +51,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Robot Customers",
+    url: SITE_URL,
+    logo: `${SITE_URL}/brand/logo.png`,
+    sameAs: ["https://robotsgoodorbad.com"],
+  };
+
   return (
     <html lang="en">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <div className="page-top-band relative flex min-h-screen flex-col text-slate-900">
           <header className="relative z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
             <div className="mx-auto max-w-7xl px-6 py-4 md:py-0 md:h-32">

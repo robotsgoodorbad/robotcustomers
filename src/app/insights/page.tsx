@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+import { OG_DEFAULTS } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Insights | Robot Customers",
+  title: "Insights",
   description:
-    "Curated link-outs to RobotsGoodorBad.com for ongoing customer insight in robotics.",
+    "A running set of articles documenting real-world robot sentiment and our Robot Readiness audience segments.",
+  alternates: { canonical: "/insights" },
+  openGraph: { ...OG_DEFAULTS, title: "Insights | Robot Customers", url: "/insights" },
 };
 
 export default function InsightsPage() {

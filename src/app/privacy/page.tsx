@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { OG_DEFAULTS } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Robot Customers",
-  description:
-    "Privacy Policy for Robot Customers LLC — what information we collect, how we use it, and your choices.",
+  title: "Privacy Policy",
+  description: "Privacy policy for robotcustomers.com.",
+  alternates: { canonical: "/privacy" },
+  openGraph: { ...OG_DEFAULTS, title: "Privacy Policy | Robot Customers", url: "/privacy" },
 };
 
 export default function PrivacyPage() {
