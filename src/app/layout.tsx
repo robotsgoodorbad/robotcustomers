@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import { HeaderNav } from "@/components/header-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { OG_DEFAULTS } from "@/lib/metadata";
 import "./globals.css";
+
+const GA_ID = "G-9NV6SMYB37";
+const isProd = process.env.NODE_ENV === "production";
 
 const SITE_URL = "https://robotcustomers.com";
 
@@ -63,6 +67,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        {isProd && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { anonymize_ip: true, send_page_view: true });
+              `}
+            </Script>
+          </>
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
